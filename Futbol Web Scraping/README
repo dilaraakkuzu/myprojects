@@ -1,0 +1,60 @@
+Transfermarkt Match Data Scraper
+Bu Python projesi, Selenium kütüphanesini kullanarak Transfermarkt üzerinden belirli bir lig ve sezon aralığındaki maç verilerini, takım istatistiklerini ve oyuncu performanslarını detaylı bir şekilde kazımak (scraping) için tasarlanmıştır.
+
+🚀 Özellikler
+Kod, belirtilen hafta aralığındaki tüm maçlar için aşağıdaki verileri toplar ve bir .csv dosyasına kaydeder:
+
+Maç Bilgileri: Lig adı, ev sahibi/deplasman takımları, maç sonucu.
+
+Takım İstatistikleri: Toplam şut, isabetsiz şut, kurtarışlar, kornerler, fauller ve ofsayt bilgileri.
+
+Piyasa Değerleri: Takımların toplam kadro değerleri ve oyuncu başına düşen ortalama piyasa değerleri.
+
+Oyuncu Detayları (İlk 11): Her iki takımın ilk 11 oyuncularının isimleri, piyasa değerleri, toplam gol, sarı/kırmızı kart, oyunda kaldıkları süre ve maç başına puan ortalamaları gibi 15'ten fazla metrik.
+
+🛠️ Gereksinimler
+Kodu çalıştırmadan önce sisteminizde aşağıdaki kütüphanelerin ve araçların kurulu olması gerekir:
+
+Python 3.x
+
+Selenium: pip install selenium
+
+Pandas: pip install pandas
+
+ChromeDriver: Chrome tarayıcı sürümünüzle uyumlu bir ChromeDriver indirilmiş olmalıdır.
+
+⚙️ Kurulum ve Yapılandırma
+Kodu kendi bilgisayarınızda çalıştırmak için şu değişkenleri güncellemeniz gerekmektedir:
+
+Driver Yolu: driver_path değişkenine kendi chromedriver.exe yolunuzu yazın.
+
+Chrome Profili: user-data-dir kısmında belirtilen yolu kendi sisteminize göre güncelleyin veya varsayılan profil için bu satırı kaldırın.
+
+Lig ve Sezon: * league: Hedef ligin URL adı (örn: "super-lig").
+
+season: Hedef sezon (örn: "2024").
+
+start_week / end_week: Kazınacak hafta aralığı.
+
+📖 Kullanım
+Terminal veya IDE üzerinden dosyayı çalıştırın:
+
+Bash
+python transfermarkt_data.py
+İşlem tamamlandığında, aynı dizinde Turkey(2024-2025).csv adında, tüm verilerin noktalı virgül (;) ile ayrıldığı bir dosya oluşacaktır.
+
+⚠️ Önemli Notlar
+Zamanlayıcılar (Sleep): Kod içerisinde time.sleep() fonksiyonları kullanılmıştır. İnternet hızınıza göre bu süreleri optimize edebilirsiniz.
+
+Hata Yönetimi: Kod, dinamik içeriklerin yüklenmesini beklemek için WebDriverWait kullanır; ancak Transfermarkt'ın site yapısındaki büyük değişiklikler kodun güncellenmesini gerektirebilir.
+
+Yasal Uyarı: Bu araç sadece eğitim amaçlıdır. Transfermarkt'ın kullanım koşullarına ve robots.txt dosyasına uyulması kullanıcının sorumluluğundadır.
+
+Dosya Yapısı Hakkında
+player(): Oyuncu detay sayfasından istatistikleri çeker.
+
+kadrolar(): Maçın kadro sekmesine giderek ilk 11 oyuncularını analiz eder.
+
+istatistik(): Maçın teknik istatistiklerini toplar.
+
+extract_data(): Tüm fonksiyonları birleştirerek tek bir maçın tam veri setini oluşturur.
