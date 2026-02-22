@@ -57,7 +57,8 @@ Kütüphaneler:
 
 Bash
 pip install pyspark matplotlib pandas numpy seaborn
-Notebook'u Çalıştırın: als BİG DATA.ipynb dosyasını Jupyter üzerinden başlatın.
+
+Notebook'u Çalıştırın: "ALS BİG DATA.ipynb" dosyasını Jupyter üzerinden başlatın.
 
 📊 Sonuçlar
 Yapılan denemeler, gizli özellik sayısı (Rank) arttıkça modelin veri üzerindeki karmaşıklığı daha iyi kavradığını ve RMSE değerinin düştüğünü göstermiştir. Final modeli als_model_rank200_iter200_lambda0.1 klasörüne kaydedilmiştir.
