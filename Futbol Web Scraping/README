@@ -1,4 +1,6 @@
+!!!!EĞİTİM AMAÇLIDIR!!!!!
 Transfermarkt Match Data Scraper
+
 Bu Python projesi, Selenium kütüphanesini kullanarak Transfermarkt üzerinden belirli bir lig ve sezon aralığındaki maç verilerini, takım istatistiklerini ve oyuncu performanslarını detaylı bir şekilde kazımak (scraping) için tasarlanmıştır.
 
 🚀 Özellikler
